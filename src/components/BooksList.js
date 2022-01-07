@@ -7,6 +7,7 @@ function BooksList({ allBooks, onDelete }) {
       <div key={book.id}>
         <h3>{book.title}</h3>
         <p>{book.description}</p>
+        <button onClick={()=>{ onDelete(book.id)}}> Delete</button>
         </div>
     ))}
     </article>}

@@ -33,7 +33,7 @@ export default function App() {
 
   const oneBookAddedHandler = (book) => {
     books.id = books.length + 1;
-    // console.log(books);
+
     setBooks([...books, book]);
   };
   const handlerDelete = (id) => {
