@@ -32,7 +32,7 @@ export default function App() {
   const [books, setBooks] = useState(bookArray);
 
   const oneBookAddedHandler = (book) => {
-    book.id = (Math.max(...bookArray.map( b => b.id)) +1) 
+    book.id = Math.max(...books.map((b) => b.id)) + 1;
     setBooks([...books, book]);
   };
   const handlerDelete = (id) => {
