@@ -1,6 +1,6 @@
 import React from 'react';
 function BooksList({ allBooks, onDelete }) {
-  console.log(allBooks.length);
+
   return <div>{!allBooks.length && <p>No Data Found</p>}
   {allBooks.length > 0 && <article >
     {allBooks.map(book => (
