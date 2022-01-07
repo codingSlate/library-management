@@ -38,13 +38,16 @@ export default function App() {
   const handlerDelete = (id) => {
     setBooks(books.filter((book) => book.id !== id));
   };
+  const handlerEdit = (id) => {
+    
+  };
 
   return (
     <div>
       <h1>Library Management</h1>
       <StudentsList />
       <BookDetailsForm oneBookAdded={oneBookAddedHandler} />
-      <BooksList allBooks={books} onDelete={handlerDelete} />
+      <BooksList allBooks={books} onDelete={handlerDelete} onEdit={handlerEdit} />
     </div>
   );
 }

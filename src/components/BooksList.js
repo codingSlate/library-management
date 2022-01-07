@@ -1,5 +1,5 @@
 import React from 'react';
-function BooksList({ allBooks, onDelete }) {
+function BooksList({ allBooks, onDelete, onEdit }) {
 
   return <div>{!allBooks.length && <p>No Data Found</p>}
   {allBooks.length > 0 && <article >
