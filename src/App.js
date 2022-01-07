@@ -4,28 +4,40 @@ import BooksList from './components/BooksList';
 import StudentsList from './components/StudentsList';
 import BookDetailsForm from './components/BookDetailsForm';
 
-export default function App(props) {
-  let books = [
-    {
-      id: 1,
-      title: 'Algebra',
-      description: 'Mathematics Book',
-    },
-    {
-      id: 2,
-      title: 'Physic',
-      description: 'Science Book',
-    },
-    {
-      id: 3,
-      title: 'C++',
-      description: 'Programming Book',
-    },
-  ];
+let bookArray = [
+  {
+    id: 1,
+    title: 'Algebra',
+    description: 'Mathematics Book',
+  },
+  {
+    id: 2,
+    title: 'Physic',
+    description: 'Science Book',
+  },
+  {
+    id: 3,
+    title: 'C++',
+    description: 'Programming Book',
+  },
+];
 
-  const oneBookAddedHandler = (data) => {
-    books.push({ id: books.length + 1, ...data });
-    console.log(books);
+const initBooks = {
+  id: null,
+  title: '',
+  description: '',
+};
+
+export default function App() {
+  const [books, setBooks] = useState(bookArray);
+
+  const oneBookAddedHandler = (book) => {
+    books.id = books.length + 1;
+    // console.log(books);
+    setBooks([...books, book]);
+  };
+  const handlerDelete = (id) => {
+    console.log(id);
   };
 
   return (
@@ -33,7 +45,7 @@ export default function App(props) {
       <h1>Library Management</h1>
       <StudentsList />
       <BookDetailsForm oneBookAdded={oneBookAddedHandler} />
-      <BooksList showBooks={books} />
+      <BooksList allBooks={books} onDelete={handlerDelete} />
     </div>
   );
 }
