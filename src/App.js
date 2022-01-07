@@ -39,7 +39,7 @@ export default function App() {
     setBooks(books.filter((book) => book.id !== id));
   };
   const handlerEdit = (id) => {
-    
+    console.log(id)
   };
 
   return (
